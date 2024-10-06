@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
   heading: {
     flexDirection: 'row',
     alignItems: 'center',
+    alignItems: 'center',
     gap: 6,
   },
   content: {
