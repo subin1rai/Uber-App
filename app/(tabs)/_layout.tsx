@@ -4,12 +4,11 @@ import { SafeAreaView } from 'react-native';
 
 export default function TabLayout() {
   return (
-
       <Tabs
         screenOptions={{
           // tabBarActiveTintColor: 'blue',
           headerShown: false,
-          tabBarStyle: { paddingBottom: 0, height: 50 },  // You can adjust height
+          // tabBarStyle: { paddingBottom: 0, height: 50 },  // You can adjust height
         }}
       >
         <Tabs.Screen

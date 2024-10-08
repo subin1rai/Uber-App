@@ -1,11 +1,11 @@
 import { Link } from "expo-router";
-import { View, Text } from "react-native";
+import { View, Text, SafeAreaView } from "react-native";
 
 export default function explore(){
-    return <View>
+    return <SafeAreaView>
         <Text>Explore Page</Text>
         <Link href={"/accountinfo"}>
         <Text>Account Information</Text>
         </Link>
-    </View>
+    </SafeAreaView>
 }
