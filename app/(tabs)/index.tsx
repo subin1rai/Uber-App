@@ -1,17 +1,24 @@
-import { Link } from "expo-router";
-import { View, Text } from "react-native";
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { Text, View } from 'react-native';
+
+const Tab = createMaterialTopTabNavigator();
 
 export default function foryou(){
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Settings" component={SettingsScreen} />
+    </Tab.Navigator>
+  );
+}
+
+function HomeScreen(){
     return <View>
-        <Text>For You Page</Text>
-        <Link href={"/suggested"}>
-            <Text>Suggested</Text>
-        </Link>
-        <Link href={"/liked"}>
-            <Text>liked</Text>
-        </Link>
-        <Link href={"/library"}>
-            <Text>library</Text>
-        </Link>
+        <Text>Hi from Home Page</Text>
+    </View>
+}
+function SettingsScreen(){
+    return <View>
+        <Text>Hi from SettingsScreen Page</Text>
     </View>
 }

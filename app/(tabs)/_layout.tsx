@@ -7,7 +7,7 @@ export default function TabLayout() {
 
       <Tabs
         screenOptions={{
-          tabBarActiveTintColor: 'green',
+          // tabBarActiveTintColor: 'blue',
           headerShown: false,
           tabBarStyle: { paddingBottom: 0, height: 50 },  // You can adjust height
         }}
