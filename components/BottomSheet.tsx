@@ -13,6 +13,7 @@ export const DownloadPicture = ({onClose}:{
     console.log('handleSheetChanges', index);
   }, []);
 
+  //fsf
   // renders
   return (
     <View style={styles.container}>
