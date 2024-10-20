@@ -17,14 +17,3 @@ export default function foryou() {
     </SafeAreaView>
   );
 }
-
-function HomeScreen(){
-    return <View>
-        <Text>Hi from Home Page</Text>
-    </View>
-}
-function SettingsScreen(){
-    return <View>
-        <Text>Hi from SettingsScreen Page</Text>
-    </View>
-}
