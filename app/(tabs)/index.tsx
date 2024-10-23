@@ -9,7 +9,9 @@ const Tab = createMaterialTopTabNavigator();
 export default function foryou() {
   return (
     <SafeAreaView style={{flex:1, backgroundColor:"white"}}>
+      {/* navigation */}
       <Tab.Navigator>
+      
         <Tab.Screen name="Suggested" component={Suggested} />
         <Tab.Screen name="Liked" component={Liked} />
         <Tab.Screen name="Library" component={Library} />
