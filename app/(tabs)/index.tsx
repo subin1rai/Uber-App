@@ -11,6 +11,7 @@ export default function foryou() {
     <SafeAreaView style={{flex:1, backgroundColor:"white"}}>
       {/* navigation */}
       {/* Tab navbar from the expo*/}
+      {/* Tab navbar from the expo*/}
       <Tab.Navigator>
       
         <Tab.Screen name="Suggested" component={Suggested} />
