@@ -4,7 +4,7 @@ import { SafeAreaView, StatusBar } from 'react-native';
 
 export default function TabLayout() {
   return (
-      <Tabs
+       <Tabs
         screenOptions={{
           // tabBarActiveTintColor: 'blue',
           headerShown: false,
@@ -25,6 +25,13 @@ export default function TabLayout() {
             tabBarIcon: ({ color }) => <FontAwesome size={28} name="compass" color={color} />,
           }}
         />
+          <Tabs.Screen
+            name="account"
+            options={{
+              title: 'Account',
+              tabBarIcon: ({ color }) => <FontAwesome size={28} name="cog" color={color} />,
+            }}
+          />
           <Tabs.Screen
             name="account"
             options={{
