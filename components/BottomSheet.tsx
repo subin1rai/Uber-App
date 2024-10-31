@@ -1,44 +1,80 @@
-import React, { useCallback, useMemo, useRef } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import BottomSheet, { BottomSheetView } from '@gorhom/bottom-sheet';
+import React, { useCallback, useMemo, useRef } from "react";
+import { View, Text, StyleSheet, Image, Button, useColorScheme } from "react-native";
+import BottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
+import { Wallpaper } from "@/hooks/useWallpaper";
+import { Ionicons } from "@expo/vector-icons";
+import { Colors } from "@/constants/Colors";
 
-export const DownloadPicture = ({onClose}:{
-    onClose:()=> void;
+export const DownloadPicture = ({
+  onClose,
+  wallpaper,
+}: {
+  onClose: () => void;
+  wallpaper: Wallpaper;
 }) => {
   // ref
   const bottomSheetRef = useRef<BottomSheet>(null);
 
   // callbacks
   const handleSheetChanges = useCallback((index: number) => {
-    console.log('handleSheetChanges', index);
+    console.log("handleSheetChanges", index);
   }, []);
+  const theme = useColorScheme() ?? "light";
 
-  //fsf
-  // renders
+
   return (
-    <View style={styles.container}>
-      <BottomSheet
+    <BottomSheet
       onClose={onClose}
-        ref={bottomSheetRef}
-        snapPoints={["90%"]}  // Add snapPoints here
-        onChange={handleSheetChanges}
-        enablePanDownToClose={true}
-        handleIndicatorStyle={{height:0}}
-      >
-        <BottomSheetView style={styles.contentContainer}>
-          <Text>Awesome 🎉</Text>
-        </BottomSheetView>
-      </BottomSheet>
-    </View>
+      ref={bottomSheetRef}
+      snapPoints={["90%"]} // Add snapPoints here
+      onChange={handleSheetChanges}
+      enablePanDownToClose={true}
+      handleIndicatorStyle={{display:"none"}}
+      handleStyle={{display:"none"}}
+    >
+      <BottomSheetView style={styles.contentContainer}>
+        <Image
+          style={styles.image}
+          source={{
+            uri: wallpaper.url,
+          }}
+        />
+        <View style={styles.topbar}>
+        <Ionicons
+              name={"close"}
+              size={24}
+              color={theme === "light" ? Colors.light.icon : Colors.dark.icon}
+            />
+        <Ionicons
+              name={"heart"}
+              size={24}
+              color={theme === "light" ? Colors.light.icon : Colors.dark.icon}
+            />
+        </View>
+        <Button title="Download"></Button>
+      </BottomSheetView>
+    </BottomSheet>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
   contentContainer: {
     flex: 1,
-    alignItems: 'center',
   },
+  image:{
+     height:"60%",
+     borderTopRightRadius:12,
+     borderTopLeftRadius:12,
+  },
+  topbar:{
+    position:"absolute",
+    padding:10,
+    display:"flex",
+    flexDirection:"row",
+    justifyContent:"space-between",
+    width:"100%"
+  }
 });
