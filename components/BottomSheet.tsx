@@ -45,11 +45,18 @@ export const DownloadPicture = ({
               size={24}
               color={theme === "light" ? Colors.light.icon : Colors.dark.icon}
             />
+            <View style={styles.multiple}>
+        <Ionicons
+              name={"share"}
+              size={24}
+              color={theme === "light" ? Colors.light.icon : Colors.dark.icon}
+            />
         <Ionicons
               name={"heart"}
               size={24}
               color={theme === "light" ? Colors.light.icon : Colors.dark.icon}
-            />
+              />
+              </View>
         </View>
         <Button title="Download"></Button>
       </BottomSheetView>
@@ -62,8 +69,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   contentContainer: {
-    flex: 1,
-  },
+    flex: 1
+    },
   image:{
      height:"60%",
      borderTopRightRadius:12,
@@ -76,5 +83,12 @@ const styles = StyleSheet.create({
     flexDirection:"row",
     justifyContent:"space-between",
     width:"100%"
+  },
+  multiple:{
+    display: "flex",
+    justifyContent:"space-between",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 5
   }
 });
