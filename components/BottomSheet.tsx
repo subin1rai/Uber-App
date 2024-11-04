@@ -63,7 +63,7 @@ export const DownloadPicture = ({
     </BottomSheet>
   );
 };
-
+//styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
