@@ -63,7 +63,7 @@ export const DownloadPicture = ({
     </BottomSheet>
   );
 };
-//styles
+//styles fsdf
 const styles = StyleSheet.create({
   container: {
     flex: 1,
