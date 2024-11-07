@@ -76,6 +76,8 @@ export const DownloadPicture = ({
 };
 
 function DownloadButton(){
+  const theme = useColorScheme() ?? "light";
+  
   return <Pressable style={{
     backgroundColor:"black",
     padding:10,
@@ -86,11 +88,16 @@ function DownloadButton(){
     marginHorizontal:40,
     marginVertical:20
   }}>
+    <Ionicons
+        name={"download"}
+        size={24}
+        color={theme === "light" ? Colors.light.icon : Colors.dark.icon}
+        style={{paddingRight:10}}
+    />
     <Text style={{
       fontSize:20,
       color:"white",
       fontWeight:"600",
-      
       }}>
 
 Download
